@@ -1,11 +1,11 @@
 Name:          container-exception-logger
 Version:       1.0.3
-Release:       3
+Release:       4
 Summary:       Logging from a container to a host
 License:       GPLv3+
 URL:           https://github.com/abrt/container-exception-logger
 Source0:       https://github.com/abrt/container-exception-logger/archive/%{name}-%{version}-1.tar.gz
-BuildRequires: asciidoc libxslt
+BuildRequires: asciidoc libxslt gcc
 
 %description
 Container-exception-logger is a tool designed to run inside of a container
@@ -39,6 +39,9 @@ cp man/container-exception-logger.1 %{buildroot}/%{_mandir}/man1/container-excep
 %{_mandir}/man1/container-exception-logger.1.*
 
 %changelog
+* Mon May 31 2021 baizhonggui <baizhonggui@huawei.com> 1.0.3-4
+- Add gcc in BuildRequires
+
 * Tues Sept 8 2020 Ge Wang <wangge20@huawei.com> 1.0.3-3
 - Modify the Source0 Url
 
