@@ -1,6 +1,6 @@
 Name:          container-exception-logger
 Version:       1.0.3
-Release:       4
+Release:       5
 Summary:       Logging from a container to a host
 License:       GPLv3+
 URL:           https://github.com/abrt/container-exception-logger
@@ -21,7 +21,7 @@ Help document for the %{name} package.
 %autosetup -n %{name}-%{name}-%{version}-1 -p1
 
 %build
-gcc %{optflags} src/%{name}.c -o src/container-exception-logger
+gcc %{optflags} -fPIE src/%{name}.c -o src/container-exception-logger
 a2x -d manpage -f manpage man/container-exception-logger.1.asciidoc
 
 %install
@@ -39,6 +39,9 @@ cp man/container-exception-logger.1 %{buildroot}/%{_mandir}/man1/container-excep
 %{_mandir}/man1/container-exception-logger.1.*
 
 %changelog
+* Fri Mar 03 2023 wulei <wulei80@h-partners.com> - 1.0.3-5
+- Add the compilation option pie
+
 * Mon May 31 2021 baizhonggui <baizhonggui@huawei.com> 1.0.3-4
 - Add gcc in BuildRequires
 
