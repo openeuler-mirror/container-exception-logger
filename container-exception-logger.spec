@@ -21,7 +21,7 @@ Help document for the %{name} package.
 %autosetup -n %{name}-%{name}-%{version}-1 -p1
 
 %build
-$cc %{optflags} -fPIE src/%{name}.c -o src/container-exception-logger
+$CC %{optflags} -fPIE src/%{name}.c -o src/container-exception-logger
 a2x -d manpage -f manpage man/container-exception-logger.1.asciidoc
 
 %install
